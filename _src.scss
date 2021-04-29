@@ -1,5 +1,7 @@
-
 .container-2lgZY8 {
+    .unreadMentionsIndicatorBottom-2mDYbI,.unreadMentionsIndicatorTop-2-tcdU{
+        width: calc( #{$guildsize}px * #{$columns} );
+    }
     .wrapper-3NnKdC{
         @for $columnsamount from 1 through 300 {
             @if $columns == $columnsamount { 
