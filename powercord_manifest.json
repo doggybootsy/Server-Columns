@@ -1,0 +1,8 @@
+{
+    "name": "Server Columns",
+    "description": "Port of Server Columns - DevilBro",
+    "version": "1.0.0",
+    "author": "Doggybootsy#1333",
+    "theme": "index.scss",
+    "license": "MIT"
+}
