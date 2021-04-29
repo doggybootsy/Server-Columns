@@ -54,6 +54,15 @@
                         transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),0) !important;
                     }
                 }
+                .upperBadge-2XnnGB{
+                    transform: scale(calc( #{$guildsize} / 72 )) !important;
+                    @if $guildsize < 72 { 
+                        transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),0) !important;
+                    }
+                    @if $guildsize > 72 { 
+                        transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),0) !important;
+                    }
+                }
                 .pill-1z4sAY{
                     height: calc(#{$guildsize}px - 24px);
                     .item-2hkk8m{
