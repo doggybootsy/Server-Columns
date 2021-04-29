@@ -1,64 +1,98 @@
-.container-2lgZY8 {
-    .unreadMentionsIndicatorBottom-2mDYbI,.unreadMentionsIndicatorTop-2-tcdU{
-        width: calc( #{$guildsize}px * #{$columns} );
+.platform-osx{
+    .wrapper-3NnKdC{
+        height: calc(calc(100vh - 32px) * #{$columns} );
+        .scroller-1Bvpku{
+            height: calc(100vh - 32px);
+        }
+        .unreadMentionsIndicatorBottom-2mDYbI{
+            bottom:calc(calc(100vh * calc(#{$columns} - 1)) + 30px) !important;
+        }
     }
+}
+.platform-win{
+    .wrapper-3NnKdC{
+        height: calc(calc(100vh - 22px) * #{$columns} );
+        .scroller-1Bvpku{
+            height: calc(100vh - 22px);
+        }
+        .unreadMentionsIndicatorBottom-2mDYbI{
+            bottom:calc(calc(100vh * calc(#{$columns} - 1)) + 20px) !important;
+        }
+    }
+}
+.platform-linux,.platform-web{
+    .wrapper-3NnKdC{
+        height: calc(100vh * #{$columns} );
+        .scroller-1Bvpku{
+            height: 100vh;
+        }
+        .unreadMentionsIndicatorBottom-2mDYbI{
+            bottom:calc(100vh * calc(#{$columns} - 1))!important;
+        }
+    }
+}
+.container-2lgZY8 {
     .wrapper-3NnKdC{
         @for $columnsamount from 1 through 300 {
             @if $columns == $columnsamount { 
                 width: calc(#{$columnsamount} * #{$guildsize}px);
             }
         }
-    }
-    .scroller-1Bvpku{
-        .listItem-GuPuDH{
-            width: #{$guildsize}px;
-            .lowerBadge-29hYVK{
-                transform: scale(calc( #{$guildsize} / 72 )) !important;
-                @if $guildsize < 72 { 
-                    transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),0) !important;
+        height: calc(100vh * #{$columns});
+        .unreadMentionsIndicatorBottom-2mDYbI,.unreadMentionsIndicatorTop-2-tcdU{
+            width: calc( #{$guildsize}px * #{$columns} );
+        }
+        .scroller-1Bvpku{
+            .listItem-GuPuDH{
+                width: #{$guildsize}px;
+                .lowerBadge-29hYVK{
+                    transform: scale(calc( #{$guildsize} / 72 )) !important;
+                    @if $guildsize < 72 { 
+                        transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),calc( #{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / calc(72 * #{$guildsize}))) ),0) !important;
+                    }
+                    @if $guildsize > 72 { 
+                        transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),0) !important;
+                    }
                 }
-                @if $guildsize > 72 { 
-                    transform: scale(calc( #{$guildsize} / 72 )) translate3d(calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),calc( -#{$guildsize}px / calc(#{$guildsize} / calc(#{$guildsize} / 72)) ),0) !important;
+                .pill-1z4sAY{
+                    height: calc(#{$guildsize}px - 24px);
+                    .item-2hkk8m{
+                        transform: scale(calc( #{$guildsize} / 72 )) !important;
+                    }
                 }
-            }
-            .pill-1z4sAY{
-                height: calc(#{$guildsize}px - 24px);
-                .item-2hkk8m{
+                .svg-1X37T1,.wrapper-25eVIn{
+                    width: calc(#{$guildsize}px - 24px);
+                    height: calc(#{$guildsize}px - 24px);
+                }
+                .guildSeparator-33mFX6{
                     transform: scale(calc( #{$guildsize} / 72 )) !important;
                 }
             }
-            .svg-1X37T1,.wrapper-25eVIn{
-                width: calc(#{$guildsize}px - 24px);
-                height: calc(#{$guildsize}px - 24px);
+            &>.tutorialContainer-2sGCg9>div{
+                margin-left: auto;
+                margin-right: auto;
             }
-            .guildSeparator-33mFX6{
-                transform: scale(calc( #{$guildsize} / 72 )) !important;
+            &>.tutorialContainer-30WoTp>div{
+                margin-left: auto;
+                margin-right: auto;
             }
-        }
-        &>.tutorialContainer-2sGCg9>div{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        &>.tutorialContainer-30WoTp>div{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        &>.listItem-GuPuDH{
-            margin-left: auto;
-            margin-right: auto;
-        }
-        &>[aria-label]{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            .wrapper-3Njo_c{
-                width: #{$guildsize}px;
-                height: fit-content;
-                .expandedFolderBackground-1cujaW{
-                    width: calc(#{$guildsize}px - 24px);
-                }
-                [id^="folder-items-"]{
-                    height: fit-content !important;
+            &>.listItem-GuPuDH{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &>[aria-label]{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .wrapper-3Njo_c{
+                    width: #{$guildsize}px;
+                    height: fit-content;
+                    .expandedFolderBackground-1cujaW{
+                        width: calc(#{$guildsize}px - 24px);
+                    }
+                    [id^="folder-items-"]{
+                        height: fit-content !important;
+                    }
                 }
             }
         }
